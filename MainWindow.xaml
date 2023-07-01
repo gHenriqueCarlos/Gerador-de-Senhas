@@ -16,7 +16,7 @@
         Background="{x:Null}"
         AllowsTransparency="True"
         WindowStyle="None"
-        WindowStartupLocation="CenterScreen">
+        WindowStartupLocation="CenterScreen" Loaded="Window_Loaded">
 
     <materialDesign:Card UniformCornerRadius="15" Background="{DynamicResource MaterialDesignPaper}" Margin="25">
         <StackPanel>
@@ -24,8 +24,6 @@
             <TextBlock Text="GERADOR" Margin="0 25 0 5" HorizontalAlignment="Center" FontSize="28" FontWeight="Bold"/>
             <TextBlock Text="DE" Margin="0 -10 0 5" HorizontalAlignment="Center" FontSize="28" FontWeight="Bold"/>
             <TextBlock Text="SENHAS" Margin="0 -10 0 5" HorizontalAlignment="Center" FontSize="28" FontWeight="Bold"/>
-           
-            <!--<TextBlock Text="SENHA:" Margin="10 50 10 0" FontSize="16"/>-->
             <TextBox x:Name="tbSenha" Margin="10 50 10 0" Height="30" FontSize="18" 
                      BorderThickness="2" 
                      BorderBrush="{DynamicResource MaterialDesignDivider}" 
@@ -36,20 +34,14 @@
             <ToggleButton Width="35" HorizontalAlignment="Left" Margin="130 -17 0 0" x:Name="tbtnUsarNumeros" Click="tbtnUsarNumeros_Click" IsChecked="True"/>
             <TextBlock FontSize="18" Text="Usar caracteres especiais" HorizontalAlignment="Left" Margin="10 30 0 0"/>
             <ToggleButton Width="35" HorizontalAlignment="Left" Margin="225 -17 0 0" x:Name="tbtnUsarCharEspecial" Click="tbtnUsarCharEspecial_Click" IsChecked="True"/>
-            
+            <TextBlock FontSize="18" Text="Tamanho" HorizontalAlignment="Left" Margin="10 30 0 0"/>
+            <TextBox x:Name="tbTamanho" Margin="90 -25 0 0" Height="30" FontSize="18" 
+                     BorderThickness="2" 
+                     BorderBrush="{DynamicResource MaterialDesignDivider}" 
+                     TextAlignment="Left" HorizontalAlignment="Left" Text="10" TextChanged="tbTamanho_TextChanged"/>
             <Button ToolTip="Gerar uma nova senha randomica." Margin="10 80 10 0" Content="GERAR SENHA" x:Name="btnGerarSenha" Click="btnGerarSenha_Click" Cursor="Hand"/>
+            <Button ToolTip="COPIAR" Margin="10 10 10 0" Content="COPIAR" x:Name="btnCopiar" Click="btnCopiar_Click" Cursor="Hand" HorizontalAlignment="Center" IsEnabled="False" Visibility="Hidden"/>
         </StackPanel>
-        
+
     </materialDesign:Card>
-    <!--<Grid>
-        <materialDesign:Card Padding="32" Margin="16">
-            <TextBlock Style="{DynamicResource MaterialDesignTitleTextBlock}">My First Material Design App</TextBlock>
-        </materialDesign:Card>
-    </Grid>-->
-    <!--<Grid Background="AliceBlue">
-        <TextBox x:Name="tbSenha" Margin="10,64,10,245" TextWrapping="Wrap" Text="TextBox" Background="Gray"/>
-        <Button x:Name="btnGerar" Content="Gerar" Margin="110,104,110,205" Background="Gray" d:LayoutOverrides="HorizontalAlignment" Click="btnGerar_Click"/>
-
-
-    </Grid>-->
 </Window>
